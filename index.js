@@ -2,7 +2,7 @@
 //sequelize init (this adds the models and migrations and stuff)
 //sequelize model:create --name order_history --attributes title:string
 //^^That makes the models and creates the migrations that sequelize needs. Make one for each table.
-
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
@@ -52,10 +52,10 @@ app.use(firebaseAuthMiddleware)
 const myDatabase = new Sequelize(
 
   {
-    host: "localhost",
+    host: process.env.HOST,
     dialect: "postgres",
-    port: 5432,
-    password: "null"
+    port: process.env.PORT,
+    password: process.env.PASSWORD
 
   }
 );
