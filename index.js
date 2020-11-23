@@ -21,8 +21,8 @@ app.use(cookieParser());
 
 //firebase Authenication Middleware
 const admin = require('firebase-admin');
-const serviceAccount = require("./firebase-admin-sdk.json");
-
+// const serviceAccount = require("./firebase-admin-sdk.json");
+var serviceAccount = require("path/to/serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://jobtracker-29739.firebaseio.com"
