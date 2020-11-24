@@ -40,7 +40,7 @@ admin.initializeApp({
 async function firebaseAuthMiddleware(req,res,next) {
   
 
-  if(req.headers?.authorization?.startsWith("Bearer ")){
+  if(req.headers.authorization.startsWith("Bearer ")){
     const idToken = req.headers.authorization.split("Bearer ")[1]
     try {
       const decodedToken = await admin.auth().verifyIdToken(idToken)
