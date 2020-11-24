@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'localhost:3000');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
   next();
 });
 
